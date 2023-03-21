@@ -1,4 +1,10 @@
-"""This program will create a music playlist based on a given artist or genre."""
+"""This program will create a music playlist based on a given artist or genre.
+
+create_a_playlist.py generates a music playlist based on the user's input of playlist type, 
+playlist length, and artist/genre. It uses the Spotify API in spotify.py to fetch the songs and related 
+information. The user is prompted to enter the playlist length (between 1 and 50) 
+and the playlist type (artist or genre).
+"""
 
 
 import spotify
@@ -47,7 +53,8 @@ def generate_playlist(token, playlist_length, playlist_type):
         playlist_type (str): The type of playlist to generate. Must be 'artist' or 'genre'.
 
     Returns:
-        None
+        playlist_name (str): The name of the playlist.
+        None if no tracks are found
     """
     if playlist_type == 'artist':
         artist = input("Enter an artist: ")
